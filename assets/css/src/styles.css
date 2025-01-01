@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Стили для прижатого футера */
+body {
+    @apply flex flex-col min-h-screen;
+}
+
+main {
+    @apply flex-grow;
+}
+
+/* Стили для меню */
+.header-nav ul, .footer-nav ul {
+    @apply flex space-x-4;
+}
+
+.header-nav li a, .footer-nav li a {
+    @apply hover:text-gray-300 transition-colors duration-200;
+}
+
+.header-nav .current-menu-item a, .footer-nav .current-menu-item a {
+    @apply text-blue-300;
+}
+
+/* Стили для пагинации */
+.page-numbers {
+    @apply inline-block px-4 py-2 bg-gray-100 rounded hover:bg-gray-200 transition-colors duration-200;
+}
+
+.page-numbers.current {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+/* Стили для меню */
+.header-nav ul {
+    @apply flex items-center;
+}
+
+.header-nav ul li:not(:first-child) {
+    @apply border-l border-gray-600;
+}
+
+.header-nav ul li a {
+    @apply block px-6 py-2 hover:bg-gray-700 transition-all duration-200;
+}
+
+/* Активный пункт меню */
+.header-nav .current-menu-item a {
+    @apply bg-gray-700;
+}
+
+/* Стили для меню в шапке */
+.header-nav-menu {
+    @apply flex items-center;
+}
+
+.header-nav-menu li {
+    @apply relative;
+}
+
+.header-nav-menu li:not(:last-child)::after {
+    content: '';
+    @apply absolute right-0 top-1/2 -translate-y-1/2 h-5 w-[1px] bg-gray-600;
+}
+
+.header-nav-menu li a {
+    @apply block px-8 py-2.5 text-gray-300 hover:text-white transition-all duration-200;
+}
+
+/* Активный пункт меню */
+.header-nav-menu li.current-menu-item a {
+    @apply text-white;
+}
+
+.header-nav-menu li.current-menu-item::before {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-[#FBC214];
+}
+
+/* Мобильное меню */
+#mobile-menu ul {
+    @apply space-y-2;
+}
+
+#mobile-menu ul li a {
+    @apply block px-4 py-2 text-gray-300 hover:text-white transition-all duration-200;
+}
